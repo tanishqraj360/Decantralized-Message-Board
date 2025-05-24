@@ -1,13 +1,29 @@
-# Sample Hardhat Project
+# Decentralized Message Board
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This project demonstrates a basic decentralized messaging board using the ethereum network using Metamask.
 
-Try running some of the following tasks:
+1. Install Metamask extension on your browser from metamask.io
 
+2. Run the following command in root folder
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
 npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
+3. Open another terminal window and execute the following
+```shell
+npx hardhat run scripts/deploy.js --network localhost
+```
+  This will give the CONTRACT_ADDRESS which should be saved in frontend/src/config.js
+
+4. Run the frontend server
+```shell
+cd frontend
+npm start
+```
+
+5. Open Metamask extension and configure localhost server 
+    Name: Localhost 8545
+    Url: http://127.0.0.1:8545
+    Chain: 31337
+    Currency: ETH
+
+6. Copy any private key obtained in the terminal from Step 1 and create an account on Metamask using private key.
